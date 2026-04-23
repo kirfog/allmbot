@@ -30,7 +30,6 @@ class BotWorker(QThread):
 
     def run(self):
         while not self.isInterruptionRequested():
-            # Process incoming audio from the stream
             while self.bot.recognizer.is_ready(self.bot.stt_stream):
                 self.bot.recognizer.decode_stream(self.bot.stt_stream)
 
@@ -44,7 +43,6 @@ class BotWorker(QThread):
 
                 if result:
                     self.chat_signal.emit("User", result)
-                    # This blocks THIS thread, but NOT the MonitorWorker
                     thought = self.bot.think(result)
                     self.chat_signal.emit("Bot", thought)
                     self.bot.speak(thought)
