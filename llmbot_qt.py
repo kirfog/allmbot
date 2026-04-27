@@ -6,7 +6,6 @@ import time
 import numpy as np
 import psutil
 import sounddevice as sd
-from llmbot import BotActor
 from PySide6.QtCore import QThread, Signal, Slot
 from PySide6.QtWidgets import (
     QApplication,
@@ -17,6 +16,8 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
+
+from llmbot import BotActor
 
 logger = logging.getLogger()
 

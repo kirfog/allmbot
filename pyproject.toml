@@ -1,0 +1,16 @@
+[project]
+name = "allmbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "dotenv>=0.9.9",
+    "llama-cpp-python>=0.3.21",
+    "num2words>=0.5.14",
+    "psutil>=7.2.2",
+    "pyside6>=6.11.0",
+    "sherpa-onnx>=1.12.40",
+    "sounddevice>=0.5.5",
+    "torch>=2.11.0",
+]
