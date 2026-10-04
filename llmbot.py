@@ -2,6 +2,7 @@
 import logging
 import re
 import time
+import warnings
 from types import SimpleNamespace
 
 import num2words
@@ -16,6 +17,10 @@ from torch.package.package_importer import PackageImporter
 config = SimpleNamespace(**dotenv_values(".env"))
 
 logger = logging.getLogger()
+
+warnings.filterwarnings(
+    "ignore", category=SyntaxWarning, message=r".*invalid escape sequence.*"
+)
 
 llm = Llama(
     model_path=config.MODEL_LLM_PATH,

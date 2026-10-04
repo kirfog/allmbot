@@ -1,5 +1,8 @@
 __pycache__/
 vosk-model/
-vosk-model-small
+vosk-model-small/
 *.gguf
 .env
+*.fb2
+tokenizer.json
+model.pt
